@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="50a9b11b431c4d8e965e47e1b63b84ce" Name="Diagram1" >
+        <EntityTypeShape EntityType="FitnessBournDBModel.FitnessClub" Width="1.5" PointX="1" PointY="0.625" />
+        <EntityTypeShape EntityType="FitnessBournDBModel.AddressTable" Width="1.5" PointX="3.25" PointY="0.75" />
+        <AssociationConnector Association="FitnessBournDBModel.AddressTableFitnessClub" />
+        <EntityTypeShape EntityType="FitnessBournDBModel.MemberTable" Width="1.5" PointX="1" PointY="3.375" />
+        <AssociationConnector Association="FitnessBournDBModel.MemberTableFitnessClub" />
+        <AssociationConnector Association="FitnessBournDBModel.MemberTableAddressTable" />
+        <EntityTypeShape EntityType="FitnessBournDBModel.EventTable" Width="1.75" PointX="3.875" PointY="4.75" />
+        <AssociationConnector Association="FitnessBournDBModel.EventTableMemberTable" />
+        <AssociationConnector Association="FitnessBournDBModel.EventTableAdmin" />
+        <EntityTypeShape EntityType="FitnessBournDBModel.LocationTable" Width="1.5" PointX="7.25" PointY="4.25" />
+        <AssociationConnector Association="FitnessBournDBModel.LocationTableAddressTable" />
+        <AssociationConnector Association="FitnessBournDBModel.LocationTableEventTable" />
+        <EntityTypeShape EntityType="FitnessBournDBModel.EventEdit" Width="1.5" PointX="7.375" PointY="7.25" />
+        <AssociationConnector Association="FitnessBournDBModel.EventEditLocationTable" />
+        <AssociationConnector Association="FitnessBournDBModel.EventEditEventTable" />
+        <AssociationConnector Association="FitnessBournDBModel.EventEditMemberTable" />
+        <EntityTypeShape EntityType="FitnessBournDBModel.NotificationTable" Width="1.5" PointX="1" PointY="10.625" />
+        <AssociationConnector Association="FitnessBournDBModel.NotificationTableEventEdit" />
+        <EntityTypeShape EntityType="FitnessBournDBModel.NotificationActionTable" Width="1.875" PointX="0.5" PointY="7.625" />
+        <AssociationConnector Association="FitnessBournDBModel.NotificationActionTableNotificationTable" />
+        <AssociationConnector Association="FitnessBournDBModel.NotificationActionTableMemberTable" />
+        <AssociationConnector Association="FitnessBournDBModel.MemberTableFitnessClub1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
