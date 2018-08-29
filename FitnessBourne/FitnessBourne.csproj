@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -166,14 +172,52 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AddressTable.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventEdit.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EventTable.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FitnessBournDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitnessBournDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FitnessBournDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\FitnessBournDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FitnessBournDBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\FitnessClub.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LocationTable.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MemberTable.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotificationActionTable.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NotificationTable.cs">
+      <DependentUpon>FitnessBournDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\FitnessBourneMasterDB.mdf" />
+    <Content Include="App_Data\FitnessBourneMasterDB_log.ldf">
+      <DependentUpon>FitnessBourneMasterDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -182,6 +226,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\FitnessBournDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FitnessBournDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>FitnessBournDBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\FitnessBournDBModel.edmx.sql" />
+    <Content Include="Models\FitnessBournDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FitnessBournDBModel.cs</LastGenOutput>
+      <DependentUpon>FitnessBournDBModel.edmx</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -221,7 +276,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
