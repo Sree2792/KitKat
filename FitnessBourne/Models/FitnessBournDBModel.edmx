@@ -93,8 +93,8 @@
             <PropertyRef Name="Adr_Id" />
           </Key>
           <Property Name="Adr_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Adr_Lat" Type="String" Nullable="false" />
-          <Property Name="Adr_Long" Type="String" Nullable="false" />
+          <Property Name="Adr_Lat" Type="Double" Nullable="false" />
+          <Property Name="Adr_Long" Type="Double" Nullable="false" />
           <Property Name="Adr_Unit_No" Type="String" Nullable="false" />
           <Property Name="Adr_House_No" Type="String" Nullable="false" />
           <Property Name="Adr_Street_Name" Type="String" Nullable="false" />
@@ -149,11 +149,11 @@
           </Key>
           <Property Name="Evnt_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Evnt_Type" Type="String" Nullable="false" />
-          <Property Name="Evnt_Is_Private" Type="String" Nullable="false" />
-          <Property Name="Evnt_Start_DateTime" Type="String" Nullable="false" />
-          <Property Name="Evnt_End_DateTime" Type="String" Nullable="false" />
-          <Property Name="Evnt_Is_Checkd_In" Type="String" Nullable="false" />
-          <Property Name="Event_Capacity" Type="String" Nullable="false" />
+          <Property Name="Evnt_Is_Private" Type="Byte" Nullable="false" />
+          <Property Name="Evnt_Start_DateTime" Type="DateTime" Nullable="false" />
+          <Property Name="Evnt_End_DateTime" Type="DateTime" Nullable="false" />
+          <Property Name="Evnt_Is_Checkd_In" Type="Byte" Nullable="false" />
+          <Property Name="Event_Capacity" Type="Int32" Nullable="false" />
           <NavigationProperty Name="MemberTables" Relationship="FitnessBournDBModel.EventTableMemberTable" FromRole="EventTable" ToRole="MemberTable" />
           <NavigationProperty Name="EventAdmin" Relationship="FitnessBournDBModel.EventTableAdmin" FromRole="EventTable" ToRole="MemberTable" />
           <NavigationProperty Name="LocationTables" Relationship="FitnessBournDBModel.LocationTableEventTable" FromRole="EventTable" ToRole="LocationTable" />
@@ -194,6 +194,7 @@
           <NavigationProperty Name="EventTable" Relationship="FitnessBournDBModel.EventEditEventTable" FromRole="EventEdit" ToRole="EventTable" />
           <NavigationProperty Name="Creator" Relationship="FitnessBournDBModel.EventEditMemberTable" FromRole="EventEdit" ToRole="MemberTable" />
           <NavigationProperty Name="NotificationTable" Relationship="FitnessBournDBModel.NotificationTableEventEdit" FromRole="EventEdit" ToRole="NotificationTable" />
+          <Property Name="EE_DateTime" Type="DateTime" Nullable="false" />
         </EntityType>
         <Association Name="EventEditLocationTable">
           <End Type="FitnessBournDBModel.EventEdit" Role="EventEdit" Multiplicity="*" />
