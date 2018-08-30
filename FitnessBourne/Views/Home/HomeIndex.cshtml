@@ -5,19 +5,58 @@
 }
 <style>
     #fitnessSpan{
-        margin:45%;
+        margin-top:10px;
+        margin-bottom:10px;
     }
-    #logoImg{
-        border-radius:30px;
+    #logoImg {
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-right:2%;
+        padding-left: 8%;
+        width: 90%;
+        height: 90%;
+    }
+    #logoBorder {
+        padding: 2px;
+        border: 10px solid #989898;
+        border-radius: 50px;
+        margin-bottom: 30px;
+        background-color: white;
+    }
+    #firstBlock {
+        background-color: white;
+    }
+    #titlespan {
+        color: #FF6D1D;
+        font-size: 25px;
+        margin-left: 20%;
+    }
+    #aboutspan {
+        color: #FF6D1D;
+        margin-bottom: 30px;
     }
 </style>
-<div class="row oddBlock">
-    <div class="col-sm-8 col-sm-offset-2">
-        <span id="fitnessSpan"><b>FITNESS</b><b>BOURNE</b></span>
-        <img src="../Image/Logo.png" id="logoImg"/>
-        <span>Welcome to the leading fitness community in Melbourne. Gear up and choose your club and join many other
-        sporty youthfull members like you. If you are already a Member, join many fun activities open to the members
-        of that club or the events organised by your fitness buddies.</span>
+<div class="row oddBlock" id="firstBlock">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4"  id="fitnessSpan">
+            <span id="titlespan"><b>FITNESS</b><b>BOURNE</b></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4" id="logoBorder">
+            <img src="../Image/Logo.png" id="logoImg" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2" id="aboutspan">
+            <span><b>
+    Welcome to the leading fitness community in Melbourne. Gear up and choose your club and join many other
+    sporty youthfull members like you. If you are already a Member, join many fun activities open to the members
+    of that club or the events organised by your fitness buddies.
+</b>
+                
+            </span>
+        </div>
     </div>
 </div>
 
