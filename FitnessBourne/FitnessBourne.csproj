@@ -227,6 +227,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\Club.png" />
+    <Content Include="Image\club1.jpg" />
+    <Content Include="Image\club2.jpg" />
+    <Content Include="Image\club3.jpg" />
+    <Content Include="Image\club4.jpg" />
+    <Content Include="Image\club5.jpg" />
+    <Content Include="Image\club6.jpg" />
+    <Content Include="Image\club7.jpg" />
     <Content Include="Image\Logo.png" />
     <Content Include="Image\Map_Pin.png" />
     <Content Include="Image\Motiv_Image1.jpg" />
