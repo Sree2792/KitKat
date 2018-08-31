@@ -3,10 +3,23 @@
 @{
     ViewBag.Title = "HomeIndex";
 }
+<script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
+
 <style>
+    #navBarId{
+        background-color: #4a4242 !important;
+        border-color: #4a4242 !important;
+    }
+
+    #navMenu{
+        /*background-color:black;*/
+        float:right;
+    }
     #fitnessSpan{
         margin-top:10px;
         margin-bottom:10px;
+        padding-left:5%;
     }
     #logoImg {
         padding-top: 2%;
@@ -22,6 +35,9 @@
         border-radius: 50px;
         margin-bottom: 30px;
         background-color: white;
+        height:300px;
+        width:300px;
+        margin-left:24%;
     }
     #firstBlock {
         background-color: white;
@@ -35,16 +51,25 @@
         color: #FF6D1D;
         margin-bottom: 30px;
     }
+    #mapClubs{
+        width:900px;
+        height:500px;
+    }
+    #mapBlock{
+        background-color:#eb7537;
+    }
 </style>
-<div class="row" id="firstBlock">
+<!--<div class="row" id="firstBlock">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4"  id="fitnessSpan">
             <span id="titlespan"><b>FITNESS</b><b>BOURNE</b></span>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-4 col-sm-offset-4" id="logoBorder">
-            <img src="../Image/Logo.png" id="logoImg" />
+        <div class="col-sm-4 col-sm-offset-4">
+            <div id="logoBorder" >
+                <img src="../Image/Logo.png" id="logoImg" />
+            </div>
         </div>
     </div>
     <div class="row">
@@ -58,5 +83,130 @@
             </span>
         </div>
     </div>
+</div>-->
+<div class="row oddBlock" id="imgBlock">
+    <div class="col-sm-12">
+        <img src="~/Image/Motiv_Image1.jpg" />
+    </div>
 </div>
 <div class="row oddBlock" id="mapBlock">
+    <div class="col-sm-8 col-sm-offset-2" id='mapClubs'></div>
+</div>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1Ijoic3JlZTI3OTIiLCJhIjoiY2pmdzRrN3E3MDdiMzJ4bzhzOGU0MHF2ayJ9.HFSAxgCzW06pY-q3PM_fSg';
+var mapClubPopups = L.mapbox.map('mapClubs', 'mapbox.light')
+  .setView([-37.8, 145.00], 9);
+var myLayer = L.mapbox.featureLayer().addTo(mapClubPopups);
+
+var geojson = [
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [145.038659, -37.831567]
+      },
+      properties: {
+          title: 'Mapbox DC',
+          description: '1714 14th St NW, Washington DC',
+          'marker-color': '#eb7537',
+          'marker-size': 'large',
+          image: 'https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg'
+      }
+  },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [144.903168, -37.834651]
+      },
+      properties: {
+          title: 'Mapbox SF',
+          description: '<img src="https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg"',
+          'marker-color': '#eb7537',
+          'marker-size': 'large',
+          image: 'https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg'
+      }
+  },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [145.0707, -37.941189]
+      },
+      properties: {
+          title: 'Mapbox SF',
+          description: '<img src="https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg"',
+          'marker-color': '#eb7537',
+          'marker-size': 'large',
+          image: 'https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg'
+      }
+  },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [144.811561, -37.83342]
+      },
+      properties: {
+          title: 'Mapbox SF',
+          description: '<img src="https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg"',
+          'marker-color': '#eb7537',
+          'marker-size': 'large',
+          image: 'https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg'
+      }
+  },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [144.952477, -37.763951]
+      },
+      properties: {
+          title: 'Mapbox SF',
+          description: '<img src="https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg"',
+          'marker-color': '#eb7537',
+          'marker-size': 'large',
+          image: 'https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg'
+      }
+  },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [145.020945, -37.878241]
+      },
+      properties: {
+          title: 'Mapbox SF',
+          description: '<img src="https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg"',
+          'marker-color': '#eb7537',
+          'marker-size': 'large',
+          image: 'https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg'
+      }
+  },
+  {
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [145.127481, -37.876516]
+      },
+      properties: {
+          title: 'Mapbox SF',
+          description: '<img src="https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg"',
+          'marker-color': '#eb7537',
+          'marker-size': 'large',
+          image: 'https://farm9.staticflickr.com/8571/15844010757_63b093d527_n.jpg'
+      }
+  }
+];
+
+myLayer.setGeoJSON(geojson);
+
+
+mapClubPopups.scrollWheelZoom.disable();
+</script>
+
+
+
+
+
